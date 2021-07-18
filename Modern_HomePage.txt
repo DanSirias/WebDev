@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+      <script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script type='text/javascript' src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js'></script>
+      
+      <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,300,700'>   
+      <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
+      <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+     
+  
+<style>
+
+html, body {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}    
+
+.btn1-primary {
+			  color: #fff; /* ... Primary Color for image and font ... */
+			  background-color: #063352;
+			  border-color: #063352;
+			  font: 8em Futura, ‘Century Gothic’, AppleGothic, sans-serif;
+			  font-size: 120%;
+			  cursor: pointer;
+			  width: 150px;
+			  height: 165px;
+			  float: left;
+			  list-style: none;
+			  line-height: 50px;
+			  left: 35px;
+              margin: .375rem;
+              padding: .84rem 2.14rem !important; 
+
+}
+
+
+.btn1-primary:focus,
+.btn1-primary.focus {
+			  color: #fff;
+			  background-color: #063352;
+			  border-color: #122b40;
+}
+.btn1-primary:hover {
+			  color: #fff; /*... Secondary Color for image and font ... */
+			  background-color: #195b88;
+			  border-color: #204d74;
+}
+
+.btn1-primary:active,
+.btn1-primary.active,
+.open > .dropdown-toggle.btn1-primary {
+			  color: #fff268;
+			  background-color: #063352;
+			  border-color: #204d74;
+}
+
+.btn1-primary:active:hover,
+.btn1-primary.active:hover,
+.open > .dropdown-toggle.btn1-primary:hover,
+.btn1-primary:active:focus,
+.btn1-primary.active:focus,
+.open > .dropdown-toggle.btn1-primary:focus,
+.btn1-primary:active.focus,
+.btn1-primary.active.focus,
+.open > .dropdown-toggle.btn1-primary.focus {
+				  color: #fff;
+				  background-color: #204d74;
+				  border-color: #122b40;
+}
+.btn1-primary:active, .btn1-primary.active, .open > .dropdown-toggle.btn1-primary {
+  		background-image: none;
+}
+.btn1-primary.disabled:hover, .btn1-primary[disabled]:hover,
+fieldset[disabled] .btn1-primary:hover,
+.btn1-primary.disabled:focus,
+.btn1-primary[disabled]:focus,
+fieldset[disabled] .btn1-primary:focus,
+.btn1-primary.disabled.focus,
+.btn1-primary[disabled].focus,
+fieldset[disabled] .btn1-primary.focus {
+				  background-color: #337ab7;
+				  border-color: #063352;
+}
+.btn1-primary .badge {
+				  color: #337ab7;
+				  background-color: #fff;
+}
+    
+.icon-container{
+					margin: 0 auto;
+					display: table;
+					width: 75%;
+
+}    
+
+.popshadow {
+				position: relative;
+				left:-3px; /* offset depth */
+				top: -3px; /*offset depth*/
+				box-shadow: 5px 5px 5px rgba(0,0,0,0.3); /* shadow x offset, y offset, intensity, and color rgba(red, green, blue, opacity (0-1)) */
+				transition: all .2s ease-in-out; /* 0.2s = transition duration */
+}
+.popshadow:active{
+				left:0;
+				top:0;
+				box-shadow: none;
+}
+   
+ iframe {
+    width: 530px;
+    height: 700px;
+    margin: 0 auto;
+    background-color: #777;
+    display:block;
+}
+
+ 
+.container {
+  margin-top:30px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Source Sans Pro';
+  font-weight:700;
+}
+
+.fancyTab {
+  text-align: center;
+  padding:15px 0;
+  background-color: #eee;
+  box-shadow: 0 0 0 1px #ddd;
+  top:15px;
+  transition: top .2s;
+}
+
+.fancyTab.active {
+  top:0;
+  transition:top .2s;
+}
+
+.whiteBlock {
+  display:none;
+}
+
+.fancyTab.active .whiteBlock {
+  display:block;
+  height:2px;
+  bottom:-2px;
+  background-color:#fff;
+  width:99%;
+  position:absolute;
+  z-index:1;
+}
+
+.fancyTab a {
+font-family: 'Source Sans Pro';
+font-size:1.65em;
+font-weight:300;
+  transition:.2s;
+  color:#333;
+}
+
+/*.fancyTab .hidden-xs {
+  white-space:nowrap;
+}*/
+
+.fancyTabs {
+border-bottom:2px solid #ddd;
+  margin: 15px 0 0;
+}
+
+li.fancyTab a {
+  padding-top: 15px;
+  top:-15px;
+  padding-bottom:0;
+}
+
+li.fancyTab.active a {
+  padding-top: inherit;
+}
+
+.fancyTab .fa {
+  font-size: 40px;
+width:100%;
+padding: 15px 0 5px;
+  color:#666;
+}
+
+.fancyTab.active .fa {
+  color: #cfb87c;
+}
+
+.fancyTab a:focus {
+outline:none;
+}
+
+.fancyTabContent {
+  border-color: transparent;
+  box-shadow: 0 -2px 0 -1px #fff, 0 0 0 1px #ddd;
+  padding: 30px 15px 15px;
+  position:relative;
+  background-color:#fff;
+}
+
+.nav-tabs > li.fancyTab.active > a,
+.nav-tabs > li.fancyTab.active > a:focus, .nav-tabs > li.fancyTab.active > a:hover { border-width:0; }
+
+.nav-tabs > li.fancyTab:hover {
+background-color:#f9f9f9;
+box-shadow: 0 0 0 1px #ddd;
+}
+
+.nav-tabs > li.fancyTab.active:hover {
+  background-color:#fff;
+  box-shadow: 1px 1px 0 1px #fff, 0 0px 0 1px #ddd, -1px 1px 0 0px #ddd inset; }
+
+.nav-tabs > li.fancyTab:hover a {
+border-color:transparent;
+}
+
+.nav.nav-tabs .fancyTab a[data-toggle="tab"] {
+  background-color:transparent;
+  border-bottom:0;
+}
+
+.nav-tabs > li.fancyTab:hover a {
+  border-right: 1px solid transparent;
+}
+
+.nav-tabs > li.fancyTab > a {
+margin-right:0;
+border-top:0;
+  padding-bottom: 30px;
+  margin-bottom: -30px;
+}
+
+.nav-tabs > li.fancyTab {
+margin-right:0;
+margin-bottom:0;
+}
+
+.nav-tabs > li.fancyTab:last-child a {
+  border-right: 1px solid transparent;
+}
+
+.nav-tabs > li.fancyTab.active:last-child {
+  border-right: 0px solid #ddd;
+box-shadow: 0px 2px 0 0px #fff, 0px 0px 0 1px #ddd; }
+
+.fancyTab:last-child {
+  box-shadow: 0 0 0 1px #ddd;
+}
+
+.tabs .nav-tabs li.fancyTab.active a {
+box-shadow:none;
+  top:0;
+}
+
+
+.fancyTab.active {
+  background: #fff;
+box-shadow: 1px 1px 0 1px #fff, 0 0px 0 1px #ddd, -1px 1px 0 0px #ddd inset;
+  padding-bottom:30px;
+}
+
+.arrow-down {
+  display:none;
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 22px solid #666;
+  position: absolute;
+  top: -1px;
+  left: calc(50% - 20px);
+}
+
+.arrow-down-inner {
+  width: 0;
+  height: 0;
+  border-left: 18px solid transparent;
+  border-right: 18px solid transparent;
+  border-top: 12px solid #fff;
+  position: absolute;
+  top: -22px;
+  left: -18px;
+}
+
+.fancyTab.active .arrow-down {
+  display: block;
+}
+
+@media (max-width: 1200px) {
+
+  .fancyTab .fa {
+  font-size: 36px;
+  }
+
+  .fancyTab .hidden-xs {
+    font-size:22px;
+}
+}
+@media (max-width: 992px) {
+
+  .fancyTab .fa {
+  font-size: 33px;
+  }
+
+  .fancyTab .hidden-xs {
+  font-size:18px;
+    font-weight:normal;
+  }
+}
+@media (max-width: 768px) {
+
+  .fancyTab > a {
+    font-size:18px;
+  }
+
+  .nav > li.fancyTab > a {
+    padding:15px 0;
+    margin-bottom:inherit;
+  }
+
+  .fancyTab .fa {
+    font-size:30px;
+  }
+
+  .nav-tabs > li.fancyTab > a {
+    border-right:1px solid transparent;
+    padding-bottom:0;
+  }
+
+  .fancyTab.active .fa {
+    color: #333;
+}
+}
+
+.ms-tableRow {
+    background:url("../SiteAssets/Images/Banner.jpg");
+    background-size: contain;
+    height: 150%;
+    width: 500px;
+}
+
+
+
+input[type=button] {
+
+    font:2.4em Futura, ‘Century Gothic’, AppleGothic, sans-serif;
+    height:100px;
+    width:140px;
+    font-weight:light;
+    font-size:105%;
+    /* ... other rules ... */
+    cursor:pointer;
+    float: left;
+    list-style: none;
+    margin: .375rem;
+    padding: .84rem 2.14rem !important; 
+
+
+}
+
+input[type=button]:hover {
+    background-color:rgb(207, 184, 124);
+}
+
+.outer-div
+{
+     padding: 30px;
+}
+.inner-div
+{
+     margin: 0 auto;
+     width: 100px; 
+}
+
+#wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 250px;
+  margin-top: 50px;
+  text-align: center;
+}
+
+#contentRow{
+  margin-top: 20px;    
+}
+
+.hero-image {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../SiteAssets/Images/AFIT.jpg");
+  height: 450px;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  text-align: center;
+}
+
+
+.hero-content {
+  width: 90%;
+  text-align: center;
+  display:inline;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+
+}
+
+.hero h1 {
+  font-size:64px;
+  font-family:Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-weight:100;
+  padding-bottom: 20px;
+
+}
+
+/* .hero-text button {
+  background-color: #063352;
+
+} */
+
+.hero-content button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  color: black;
+  background-color: #0d212e;
+  text-align: center;
+  cursor: pointer;
+  margin: 10px;
+  border-radius: 200px;
+}
+
+.hero-content button:hover, img:hover, .btn-banner  { /* Primary Button Effects on Banner */
+  background-color: #3b5d74;
+  color: white;
+  border-radius: 300px;
+  background: #1368ac;
+  background-size: 100% 100%;
+  background-position:center;
+  transition: all 2s ease;
+  
+}
+
+/* .school {
+  width: 150px;
+  height: 150px; 
+} */
+
+.btnLabel {
+  display: none;
+}
+
+.hero-content button .school {
+    width: 150px;
+    height: 150px;
+
+}
+
+@media only screen and (max-width: 1550px) {
+
+    .hero-content {
+            width: 90%;
+            text-align: center;
+            display:inline;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+        }
+}
+
+.list {
+      width: 90%;
+      border: 2px solid #666;
+      padding-top: 0px;
+      margin-top: -15px;
+      padding-bottom: 0px;
+      margin-bottom: -15px;
+}
+
+</style>
+</head>
+
+<body> <!-- primary button and Banner -->
+  <div class="hero-image">
+     <div class="hero-content flex-row">
+        <h1 style="line-height: 3; font-style: italic; font-size:30px; color: rgb(255, 255, 255); font-family: 'Julius Sans One', sans-serif;">From Inspiration to Innovation</h1>
+        <div class="line"></div>
+        <button type="button" class="mr-1 flex-col" onclick="location.href='#';">
+        <img class="school"  src="../SiteAssets/Images/CE.png"/><span class="btnLabel">The Civil Engineering School</span></button>
+        <button type="button" class="mr-1 flex-col" onclick="location.href='#';">
+        <img class="school"  src="../SiteAssets/Images/CI.png"/><span class="btnLabel">Civilian Institution School</span></button>
+        <button type="button" class="mr-1 flex-col" onclick="location.href='#';">
+        <img class="school"  src="../SiteAssets/Images/EN.png"/><span class="btnLabel">Graduate School of Engineering & Management</span></button>
+        <button type="button" class="mr-1 flex-col" onclick="location.href='#';">
+        <img class="school"  src="../SiteAssets/Images/EX.png"/><span class="btnLabel">The School Of Strategic Force Studies</span></button>
+        <button type="button"  class="mr-1 flex-col" onclick="location.href='#';">
+        <img class="school"  src="../SiteAssets/Images/LS.png"/><span class="btnLabel">School of Systems & Logistics</span></button>
+     </div>
+  </div>
+  <!-- Tiles and Dashboard -->
+  <div class="container">
+     <section id="fancyTabWidget" class="tabs t-tabs">
+        <ul class="nav nav-tabs fancyTabs" role="tablist">
+
+          <!-- tabBody0-->
+           <li class="tab fancyTab active">
+              <div class="arrow-down">
+                 <div class="arrow-down-inner"></div>
+              </div>
+              <a id="tab0" href="#tabBody0" role="tab"
+                 aria-controls="tabBody0" aria-selected="true" data-toggle="tab"
+                 tabindex="0"><span class="fa fa-window-restore"></span><span class="hidden-xs">Welcome</span></a>
+              <div class="whiteBlock"></div>
+           </li>
+           <!-- tabBody1 -->
+           <li class="tab fancyTab">
+              <div class="arrow-down">
+                 <div class="arrow-down-inner"></div>
+              </div>
+              <a id="tab1" href="#tabBody1" role="tab"
+                 aria-controls="tabBody1" aria-selected="true" data-toggle="tab"
+                 tabindex="0"><span class="fa fa-fighter-jet"></span><span class="hidden-xs">AF/DOD Links</span></a>
+              <div class="whiteBlock"></div>
+           </li>
+           <!-- tabBody2 -->
+           <li class="tab fancyTab">
+              <div class="arrow-down">
+                 <div class="arrow-down-inner"></div>
+              </div>
+              <a id="tab2" href="#tabBody2" role="tab"
+                 aria-controls="tabBody2" aria-selected="true" data-toggle="tab"
+                 tabindex="0"><span class="fa fa-thumbs-up"></span><span class="hidden-xs">Social Media</span></a>
+              <div class="whiteBlock"></div>
+           </li>
+           <!-- tabBody3 -->
+           <li class="tab fancyTab">
+              <div class="arrow-down">
+                 <div class="arrow-down-inner"></div>
+              </div>
+              <a id="tab3" href="#tabBody3" role="tab"
+                 aria-controls="tabBody3" aria-selected="true" data-toggle="tab"
+                 tabindex="0"><span class="fa fa-external-link-alt"></span><span class="hidden-xs">Internal Links</span></a>
+              <div class="whiteBlock"></div>
+           </li>
+           <!-- tabBody4 -->
+           <li class="tab fancyTab">
+              <div class="arrow-down">
+                 <div class="arrow-down-inner"></div>
+              </div>
+              <a id="tab4" href="#tabBody4" role="tab"
+                 aria-controls="tabBody4" aria-selected="true" data-toggle="tab"
+                 tabindex="0"><span class="fa fa-link"></span><span class="hidden-xs">External</span></a>
+              <div class="whiteBlock"></div>
+           </li>
+           <!-- tabBody5 -->
+           <li class="tab fancyTab">
+              <div class="arrow-down">
+                 <div class="arrow-down-inner"></div>
+              </div>
+              <a id="tab5" href="#tabBody5" role="tab"
+                 aria-controls="tabBody5" aria-selected="true" data-toggle="tab"
+                 tabindex="0"><span class="fa fa-globe"></span><span class="hidden-xs">Web Services</span></a>
+              <div class="whiteBlock"></div>
+           </li>
+           <!-- END OF LIVE TABS -->
+
+                            <!-- ******************THE CODE BELOW IS FOR ANY ADDITIONAL TABS BEFORE THE </ul>  MUST ADD BODY SECTION TOO*************-->
+                            <!-- ******************UPDATE THE href="#tabBody5"  PORTION IN THE TAB AND THE BODY ARE TO SYNC*************-->
+                            <!--
+                                      <li class="tab fancyTab">
+                                        <div class="arrow-down">
+                                          <div class="arrow-down-inner"></div>
+                                        </div>
+                                        <a id="tab5" href="#tabBody5" role="tab"
+                                          aria-controls="tabBody5" aria-selected="true" data-toggle="tab"
+                                          tabindex="0"><span class="fa fa-globe"></span><span class="hidden-xs">Web Services</span></a>
+                                        <div class="whiteBlock"></div>
+                                      </li>
+                            -->
+
+        </ul>
+
+        <div id="myTabContent" class="tab-content fancyTabContent" aria-live="polite">
+
+            <!-- TAB 0 -->
+           <div class="tab-pane  fade active in"
+              id="tabBody0" role="tabpanel" aria-labelledby="tab0"
+              aria-hidden="false" tabindex="0">
+              <div>
+                 <div class="row">
+                    <div class="col-md-12">
+                      <!-- START TAB 0 BODY -->
+                       <h2  style=" font-size:25px; color: rgb(122, 122, 122); font-family: 'Julius Sans One', sans-serif; padding: 7px;">Welcome to the AFIT Intranet</h2>
+                       
+                       <div class="btn1-group row ">
+                        <div class="icon-container" style="text-align:center;">
+                           <button type="button" class="btn1 btn1-block btn1-primary popshadow" onclick="location.href='https://www.31fss.com/first-31-pcs-welcome';">
+                           <i class="fa fa-user-plus fa-3x center-block"></i><br/>Inbounds</button>
+                           <button type="button" class="btn1 btn1-block btn1-primary popshadow" onclick="location.href='https://portal.usafe.af.mil/sites/Aviano/31MSG/FSS/FSP/Outbound/SitePages/Home.aspx';">
+                           <i class="fa fa-plane fa-3x center-block"></i><br/>Outbounds</button>
+                           <button type="button" class="btn1 btn1-block btn1-primary popshadow" onclick="location.href='https://portal.usafe.af.mil/sites/Aviano/Misc/TFDC/SitePages/Home.aspx';">
+                           <i class="fa fa-users fa-3x center-block"></i><br/>AAAC</button>
+                           <button type="button" class="btn1 btn1-block btn1-primary popshadow" onclick="location.href='https://portal.usafe.af.mil/sites/Aviano/Misc/56/';">
+                           <i class="fa fa-street-view fa-3x center-block"></i><br/>Base 5/6</button>
+                           <button type="button" class="btn1 btn1-block btn1-primary popshadow" onclick="location.href='https://portal.usafe.af.mil/sites/Aviano/Misc/AvianoTop3/SitePages/Home.aspx';">
+                           <i class="fa fa-user-circle fa-3x center-block"></i><br/>Top 3</button>
+                           <button type="button" class="btn1 btn1-block btn1-primary popshadow" onclick="location.href='https://portal.usafe.af.mil/sites/Aviano/31MSG/FSS/FAC/SitePages/Home.aspx';">
+                           <i class="fa fa-users fa-3x center-block"></i><br/>FAC</button>
+                           <button type="button" class="btn1 btn1-block btn1-primary popshadow" onclick="location.href='https://portal.usafe.af.mil/sites/Aviano/31MSG/SFS/PassAndReg/SitePages/Home.aspx';">
+                           <i class="fa fa-car fa-3x center-block"></i><br/>Auto</button>
+                           <button type="button" class="btn1 btn1-block btn1-primary popshadow" onclick="location.href='https://www.31fss.com/family/airman-family-readiness-center';">
+                           <i class="fa fa-users fa-3x center-block"></i><br/>AFRC</button>
+                           <button type="button" class="btn1 btn1-block btn1-primary popshadow" onclick="location.href='https://portal.usafe.af.mil/sites/Aviano/Misc/TFDC/SitePages/Home.aspx';">
+                           <i class="fa fa-bank fa-3x center-block"></i><br/>PME</button>
+                        </div>
+                     </div>
+
+ 
+
+                    <!-- END OF TAB 0 BODY -->           
+                    </div>
+                 </div>
+              </div>
+           </div>
+           <!-- TAB 1 -->
+           <div class="tab-pane  fade" id="tabBody1"
+              role="tabpanel" aria-labelledby="tab1" aria-hidden="true"
+              tabindex="0">
+              <div class="row">
+                 <div class="col-md-12">
+                   <!-- TAB 1 BODY -->
+                    <h2  style=" font-size:25px; color: rgb(122, 122, 122); font-family: 'Julius Sans One', sans-serif; padding: 7px;">Top Air Force Portal sites</h2>
+                    
+                    <div class="btn1-group row ">
+                        <div class="icon-container" style="text-align:center;">
+                           <button type="button" class="btn1 btn1-block btn1-primary popshadow" onclick="location.href='https://www.31fss.com/first-31-pcs-welcome';">
+                           <i class="fa fa-user-plus fa-3x center-block"></i><br/>Inbounds</button>
+                           <button type="button" class="btn1 btn1-block btn1-primary popshadow" onclick="location.href='https://portal.usafe.af.mil/sites/Aviano/31MSG/FSS/FSP/Outbound/SitePages/Home.aspx';">
+                           <i class="fa fa-plane fa-3x center-block"></i><br/>Outbounds</button>
+                           <button type="button" class="btn1 btn1-block btn1-primary popshadow" onclick="location.href='https://portal.usafe.af.mil/sites/Aviano/Misc/TFDC/SitePages/Home.aspx';">
+                           <i class="fa fa-users fa-3x center-block"></i><br/>AAAC</button>
+                           <button type="button" class="btn1 btn1-block btn1-primary popshadow" onclick="location.href='https://portal.usafe.af.mil/sites/Aviano/Misc/56/';">
+                           <i class="fa fa-street-view fa-3x center-block"></i><br/>Base 5/6</button>
+                           <button type="button" class="btn1 btn1-block btn1-primary popshadow" onclick="location.href='https://portal.usafe.af.mil/sites/Aviano/Misc/AvianoTop3/SitePages/Home.aspx';">
+                           <i class="fa fa-user-circle fa-3x center-block"></i><br/>Top 3</button>
+                           <button type="button" class="btn1 btn1-block btn1-primary popshadow" onclick="location.href='https://portal.usafe.af.mil/sites/Aviano/31MSG/FSS/FAC/SitePages/Home.aspx';">
+                           <i class="fa fa-users fa-3x center-block"></i><br/>FAC</button>
+                           <button type="button" class="btn1 btn1-block btn1-primary popshadow" onclick="location.href='https://portal.usafe.af.mil/sites/Aviano/31MSG/SFS/PassAndReg/SitePages/Home.aspx';">
+                           <i class="fa fa-car fa-3x center-block"></i><br/>Auto</button>
+                           <button type="button" class="btn1 btn1-block btn1-primary popshadow" onclick="location.href='https://www.31fss.com/family/airman-family-readiness-center';">
+                           <i class="fa fa-users fa-3x center-block"></i><br/>AFRC</button>
+                           <button type="button" class="btn1 btn1-block btn1-primary popshadow" onclick="location.href='https://portal.usafe.af.mil/sites/Aviano/Misc/TFDC/SitePages/Home.aspx';">
+                           <i class="fa fa-bank fa-3x center-block"></i><br/>PME</button>
+                        </div>
+                     </div>
+
+
+                 </div>
+              </div>
+           </div>
+           <!-- TAB 2 -->
+           <div class="tab-pane  fade" id="tabBody2"
+              role="tabpanel" aria-labelledby="tab2" aria-hidden="true"
+              tabindex="0">
+              <div class="row">
+                 <div class="col-md-12">
+                    <!-- TAB 2 BODY -->
+                    <h2 style=" font-size:25px;color: rgb(122, 122, 122); font-family: 'Julius Sans One', sans-serif; padding: 7px;"> Trending at AFIT</h2>
+                    <iframe  margin="0 auto" width="530" height="700" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FAFIT100%2F&amp;tabs=timeline&amp;width=630&amp;height=700&amp;small_header=false&amp;adapt_container_width=true&amp;hide_cover=false&amp;show_facepile=true&amp;appId" frameborder="0" scrolling="no" style="border: currentColor; overflow: hidden;" allowtransparency="true"></iframe>                                
+                 </div>
+              </div>
+           </div>
+           <!-- TAB 3 -->
+           <div class="tab-pane  fade" id="tabBody3"
+              role="tabpanel" aria-labelledby="tab3" aria-hidden="true"
+              tabindex="0">
+              <div class="row">
+                 <div class="col-md-12">
+                   <!-- TAB 3 Body -->
+                    <h2 style=" font-size:25px;color: rgb(122, 122, 122); font-family: 'Julius Sans One', sans-serif; padding: 7px;">View all Upcoming Events</h2>
+                    <div class="icon-container" style="text-align:center;">
+                    
+                        <input type="button" value="Portal Home" onclick="window.location.href='https://www.my.af.mil'" />
+                        <input type="button" value="ADLS" onclick="window.location.href='https://golearn.adls.af.mil/login.aspx'" />
+                        <input type="button" value="AFPC Secure" onclick="window.location.href='https://w45.afpc.randolph.af.mil/AFPCSecureNet40/PKI/MainMenu1.aspx'" />
+                        <input type="button" value="DTS" onclick="window.location.href='https://dtsproweb.defensetravel.osd.mil/dts-app/pubsite/all/view/'" />
+                        <input type="button" value="LeaveWeb" onclick="window.location.href='https://leave.af.mil/login'" />
+                        <input type="button" value="myPay" onclick="window.location.href='https://mypay.dfas.mil/mypay.aspx'" />
+                        <input type="button" value="PRDA" onclick="window.location.href='https://vpsc.afpc.randolph.af.mil/vpsc/mods/prda/tiles/pages/browse-self.jsf'" />
+                        <input type="button" value="TBA" onclick="window.location.href='https://www.my.af.mil/imdsltpa-tba/IMDSTWeb/ActionServlet'" />
+                        <input type="button" value="vMPF" onclick="window.location.href='https://w45.afpc.randolph.af.mil/AFPCSecureNet40/CheckPortal.aspx'" />
+                        <input type="button" value="vPC" onclick="window.location.href='https://mypers.af.mil/app/processes/form/fn/vdb'" />
+                 
+                  </div>
+                 </div>
+              </div>
+           </div>
+           <!-- TAB 4 -->
+           <div class="tab-pane  fade" id="tabBody4"
+              role="tabpanel" aria-labelledby="tab4" aria-hidden="true"
+              tabindex="0">
+              <div class="row">
+                 <div class="col-md-12">
+                   <!-- TAB 4 Body -->
+                    <h2 style=" font-size:25px;color: rgb(122, 122, 122); font-family: 'Julius Sans One', sans-serif; padding: 7px;">External Resource and Links</h2>
+                    <div class="icon-container" style="text-align:center;">
+                      <input type="button" value="myPay" onclick="window.location.href='https://mypay.dfas.mil/mypay.aspx'" />
+                      <input type="button" value="PRDA" onclick="window.location.href='https://vpsc.afpc.randolph.af.mil/vpsc/mods/prda/tiles/pages/browse-self.jsf'" />
+                      <input type="button" value="TBA" onclick="window.location.href='https://www.my.af.mil/imdsltpa-tba/IMDSTWeb/ActionServlet'" />
+                      <input type="button" value="vMPF" onclick="window.location.href='https://w45.afpc.randolph.af.mil/AFPCSecureNet40/CheckPortal.aspx'" />
+                      <input type="button" value="vPC" onclick="window.location.href='https://mypers.af.mil/app/processes/form/fn/vdb'" />
+               </div>
+                 </div>
+              </div>
+           </div>
+           <!-- TAB 5 -->
+           <div class="tab-pane  fade" id="tabBody5"
+              role="tabpanel" aria-labelledby="tab5" aria-hidden="true"
+              tabindex="0">
+              <div class="row">
+                 <div class="col-md-12">
+                   <!-- TAB 5 Body -->
+                    <h2  style=" font-size:25px;color: rgb(122, 122, 122); font-family: 'Julius Sans One', sans-serif; padding: 7px;">Submit your SharePoint and Systems Request</h2>
+
+                    <div class="icon-container" style="text-align:center;">
+                      <input type="button" value="myPay" onclick="window.location.href='https://mypay.dfas.mil/mypay.aspx'" />
+                      <input type="button" value="PRDA" onclick="window.location.href='https://vpsc.afpc.randolph.af.mil/vpsc/mods/prda/tiles/pages/browse-self.jsf'" />
+                      <input type="button" value="TBA" onclick="window.location.href='https://www.my.af.mil/imdsltpa-tba/IMDSTWeb/ActionServlet'" />
+                      <input type="button" value="vMPF" onclick="window.location.href='https://w45.afpc.randolph.af.mil/AFPCSecureNet40/CheckPortal.aspx'" />
+                      <input type="button" value="vPC" onclick="window.location.href='https://mypers.af.mil/app/processes/form/fn/vdb'" />
+                    </div>
+                 </div>
+              </div>
+           </div>
+
+
+<!-- ******************THE CODE BELOW IS FOR ANY ADDITIONAL TABS BEFORE THE </div>  MUST ADD BODY SECTION TOO*************-->
+<!-- ******************UPDATE THE id="tabBody1" AND THE   PORTION IN THE TAB AND THE BODY ARE TO SYNC*************-->
+
+
+           <!-- SAMPLE SECTION ONLY
+           <div class="tab-pane  fade" id="tabBody1"
+              role="tabpanel" aria-labelledby="tab1" aria-hidden="true"
+              tabindex="0">
+              <div class="row">
+                 <div class="col-md-12">
+
+                    <h2  style=" font-size:25px;color: rgb(122, 122, 122); font-family: 'Julius Sans One', sans-serif; padding: 7px;">Top Air Force Portal sites</h2>
+                    <div class="icon-container" style="text-align:center;">
+                    
+                          <input type="button" value="Portal Home" onclick="window.location.href='https://www.my.af.mil'" />
+                          <input type="button" value="ADLS" onclick="window.location.href='https://golearn.adls.af.mil/login.aspx'" />
+                          <input type="button" value="AFPC Secure" onclick="window.location.href='https://w45.afpc.randolph.af.mil/AFPCSecureNet40/PKI/MainMenu1.aspx'" />
+                          <input type="button" value="DTS" onclick="window.location.href='https://dtsproweb.defensetravel.osd.mil/dts-app/pubsite/all/view/'" />
+
+                    </div>
+                 </div>
+              </div>
+           </div>
+          -->
+
+
+
+
+          <!-- STOP DO NOT ADD ANYTHING AFTER THIS COMMENT YOU WILL BREAK IT-->
+        </div>
+     </section>
+  </div>
+
+  <!-- THE SCRIPT BELOW IS FOR FACEBOOK WIDGET -->
+  <script>
+     window.fbAsyncInit = function() {
+       FB.init({
+         appId            : 'your-app-id',
+         autoLogAppEvents : true,
+         xfbml            : true,
+         version          : 'v3.2'
+       });
+     };
+     
+     (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "https://connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+  </script>
+
+  <script>
+
+    $(document).ready(function() {
+    
+        var numItems = $('li.fancyTab').length;
+      if (numItems == 12){
+    $("li.fancyTab").width('8.3%');
+    }
+      if (numItems == 11){
+    $("li.fancyTab").width('9%');
+    }
+      if (numItems == 10){
+    $("li.fancyTab").width('10%');
+    }
+      if (numItems == 9){
+    $("li.fancyTab").width('11.1%');
+    }
+      if (numItems == 8){
+    $("li.fancyTab").width('12.5%');
+    }
+      if (numItems == 7){
+    $("li.fancyTab").width('14.2%');
+    }
+      if (numItems == 6){
+    $("li.fancyTab").width('16.666666666666667%');
+    }
+      if (numItems == 5){
+    $("li.fancyTab").width('20%');
+    }
+      if (numItems == 4){
+    $("li.fancyTab").width('25%');
+    }
+      if (numItems == 3){
+    $("li.fancyTab").width('33.3%');
+    }
+      if (numItems == 2){
+    $("li.fancyTab").width('50%');
+    }
+    
+    
+    
+    });
+    
+    $(window).load(function() {
+    
+      $('.fancyTabs').each(function() {
+    
+        var highestBox = 0;
+        $('.fancyTab a', this).each(function() {
+    
+          if ($(this).height() > highestBox)
+            highestBox = $(this).height();
+        });
+    
+        $('.fancyTab a', this).height(highestBox);
+    
+      });
+    });
+    
+    </script>
+</body>
+</html>
+
+
+<br>
+
